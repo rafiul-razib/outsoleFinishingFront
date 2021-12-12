@@ -13,10 +13,12 @@ const Home = () => {
         })
     },[])
     return (
-        <div>
+        <div className='container'>
+            <div className='row'>
             {
                 recipe.map(rcp => <Outsole rcp={rcp} key={rcp._id}></Outsole>)
             }
+            </div>
         </div>
     );
 };
