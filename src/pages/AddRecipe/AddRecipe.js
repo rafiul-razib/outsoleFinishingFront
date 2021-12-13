@@ -101,7 +101,7 @@ const AddRecipe = () => {
         <div className="container pt-4 my-4">
 
            <div className='imageUpload'>
-           <form onSubmit={handleSubmit} className='pt-3 w-75 mx-auto'>
+           <form onSubmit={handleSubmit} className='pt-3 w-100 mx-auto'>
                 <input type= "file" onChange={(e) => {
                     uploadImage(e);
                     }}/>
@@ -111,7 +111,7 @@ const AddRecipe = () => {
                 <img style={{width:"350px"}} src={imageData?.data?.url} alt="" />
             </div>
            </div>
-            <form onSubmit={handleOnSubmit} className='pt-3 w-75 mx-auto'>
+            <form onSubmit={handleOnSubmit} className='pt-3 w-100 mx-auto'>
 
                 <label htmlFor="last" className="form-label">Last Name</label>
                 <input id="last" className="p-2 form-control" type="text" onChange={e=>setLast(e.target.value)} />
