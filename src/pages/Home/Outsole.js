@@ -3,14 +3,15 @@ import { Link } from 'react-router-dom';
 
 
 const Outsole = ({rcp}) => {
-    const{last, imageBuffer, _id, art, customer} = rcp;
+    const{last, _id, art, customer, color} = rcp;
     return (
         <div className='col-md-3 col-12'>
             <div className="card text-center" style={{width:"100%"}}>
             {/* <img src={`data: image/png; base64, ${imageBuffer}`} className="card-img-top" alt="..."/> */}
             <div className="card-body">
                 <h5 className="card-title">{last} {art}</h5>
-                <p className="card-text">{customer}</p>
+                <h5>Color: {color}</h5>
+                <p className="card-text">Customer: {customer}</p>
                 <Link to={`/recipe/${_id}`}>
                     <button className='btn btn-success'>Details</button>
                 </Link>

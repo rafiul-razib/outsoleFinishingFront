@@ -1,7 +1,20 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
-const Navigation = () => {
+
+const Navigation = (props) => {
+    const searchedOutsole = props.serchedOutsole;
+    const setSearchedOutsole = props.setSerchedOutsole;
+    const setDisplayOutsoles = props.setDisplayOutsoles;
+
+    const recipe = props.recipe;
+
+    const handleChange = e =>{
+        const searchedText = e.target.value;
+        const matchedLast = recipe.filter(recipe => recipe.last.toLowerCase().includes(searchedText.toLowerCase()));
+        setDisplayOutsoles(matchedLast)
+    }
+
+    console.log(searchedOutsole)
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
         <div className="container-fluid">
@@ -22,7 +35,9 @@ const Navigation = () => {
                 </li>
             </ul>
             <form className="d-flex">
-                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <input className="form-control me-2" type="search" 
+                placeholder="Search" aria-label="Search"
+                onChange={handleChange}/>
                 <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
             </div>

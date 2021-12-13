@@ -9,15 +9,32 @@ import AddRecipe from './pages/AddRecipe/AddRecipe';
 import Navigation from './pages/AddRecipe/Shared/Navigation';
 import Details from './pages/Details/Details';
 import AllRecipe from './pages/AllRecipe/AllRecipe';
+import { useState } from 'react';
 
 function App() {
+  const[displayOutsoles, setDisplayOutsoles] = useState([])
+  const[serchedOutsole, setSerchedOutsole]= useState('');
+  const[recipe, setRecipe] = useState([])
   return (
     <div>
       <Router>
-        <Navigation/>
+        <Navigation
+        displayOutsoles={displayOutsoles} 
+        setDisplayOutsoles={setDisplayOutsoles}
+        serchedOutsole={serchedOutsole}
+        setSerchedOutsole={setSerchedOutsole}
+        recipe={recipe}
+        setRecipe={setRecipe}/>
         <Switch>
           <Route exact path="/">
-            <Home></Home>
+            <Home  
+            displayOutsoles={displayOutsoles} 
+            setDisplayOutsoles={setDisplayOutsoles}
+            serchedOutsole={serchedOutsole}
+            setSerchedOutsole={setSerchedOutsole}
+            recipe={recipe}
+            setRecipe={setRecipe}
+            ></Home>
           </Route>
           <Route path="/addRecipe">
             <AddRecipe></AddRecipe>

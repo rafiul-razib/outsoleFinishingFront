@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Outsole from './Outsole';
 
 
-const Home = () => {
-    const[recipe, setRecipe] = useState([])
-    
-    
-
-   
-
+const Home = (props) => {
+    const searchedOutsole = props.serchedOutsole;
+    const displayOutsoles = props.displayOutsoles;
+    const setDisplayOutsoles = props.setDisplayOutsoles;
+    const recipe = props.recipe;
+    const setRecipe = props.setRecipe
 
     
 
@@ -17,6 +16,7 @@ const Home = () => {
         .then(res => res.json())
         .then(data =>{
             setRecipe(data)
+            setDisplayOutsoles(data)
         })
     },[])
     return (
@@ -24,7 +24,7 @@ const Home = () => {
             <h5>Total saved recipe : {recipe.length}</h5>
             <div className='row g-4'>
             {
-                recipe.map(rcp => <Outsole rcp={rcp} key={rcp._id}></Outsole>)
+                displayOutsoles.map(rcp => <Outsole rcp={rcp} key={rcp._id}></Outsole>)
             }
             </div>
 

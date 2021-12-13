@@ -9,7 +9,7 @@ const AddRecipe = () => {
     const[last, setLast] = useState("");
     const[art, setArt] = useState("");
     const[finishing, setFinishing] = useState('');
-    const[image, setImage] = useState(null);
+    const[color, setColor] = useState('');
     const[customer, setCustomer] = useState('');
     const[manpower, setManpower] = useState('');
     // const[imgUrl, setImgUrl] = useState('');
@@ -28,6 +28,7 @@ const AddRecipe = () => {
         formData.append("imageUrl", imgUrl );
         formData.append("manpower", manpower);
         formData.append("customer", customer);
+        formData.append("color", color);
 
        
 
@@ -81,7 +82,7 @@ const AddRecipe = () => {
         const formData = new FormData();
         formData.append("image", imgCode)
         
-        fetch('https://api.imgbb.com/1/upload?expiration=600&key=37135d18bd19f1104dc1c1e780d9fa9f', {
+        fetch('https://api.imgbb.com/1/upload?key=284310bb4846227945ad85b37c5aa5b4', {
             method:"POST",
             // headers:{
             //     "content-type": "application/json"
@@ -115,8 +116,11 @@ const AddRecipe = () => {
                 <label htmlFor="last" className="form-label">Last Name</label>
                 <input id="last" className="p-2 form-control" type="text" onChange={e=>setLast(e.target.value)} />
 
-                <label htmlFor="art" className="form-label">Article</label>
+                <label htmlFor="art" className="form-label">Article/Part Code</label>
                 <input id="art" className="p-2 form-control" type="text" onChange={e=>setArt(e.target.value)} />
+
+                <label htmlFor="art" className="form-label">TPR/Color</label>
+                <input id="art" className="p-2 form-control" type="text" onChange={e=>setColor(e.target.value)} />
 
                 <label htmlFor="customer" className="form-label">Customer</label>
                 <input id="customer" className="p-2 form-control" type="text" onChange={e=>setCustomer(e.target.value)} />
