@@ -22,7 +22,7 @@ const Details = () => {
     return (
         <div className='mt-5'>
             <div className="card mx-auto pt-2" style={{width:"80%"}}>
-            {/* <img src={`data: image/png; base64, ${outsole.imageBuffer}`} className="card-img-top" alt="..."/> */}
+            <img src={outsole.imageUrl} className="card-img-top" alt="..."/>
             <div className="card-body m-4">
                 <h2 className="card-title">{outsole.last} {outsole.art}</h2>
                 <p className="card-text">{outsole.customer}</p>
