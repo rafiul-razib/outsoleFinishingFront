@@ -22,7 +22,7 @@ const Details = () => {
     return (
         <div className='mt-5'>
             <div className="card mx-auto pt-2" style={{width:"100%"}}>
-            <img src={outsole.imageUrl} className="card-img-top" style={{width:"100%"}} alt="..."/>
+            <img src={outsole.imageUrl} className="card-img-top img-fluid" style={{width:"100%"}} alt="..."/>
             <div className="card-body m-4">
                 <h2 className="card-title">{outsole.last} {outsole.art}</h2>
                 <p className="card-text">Customer: {outsole.customer}</p>

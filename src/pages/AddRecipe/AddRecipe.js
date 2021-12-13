@@ -105,10 +105,10 @@ const AddRecipe = () => {
                 <input type= "file" onChange={(e) => {
                     uploadImage(e);
                     }}/>
-                <button className='btn btn-success'>Upload Image</button>
+                <button className='btn btn-success mt-2 img-fluid'>Upload Image</button>
             </form>
             <div className='pt-3 w-75 mx-auto'>
-                <img style={{width:"350px"}} src={imageData?.data?.url} alt="" />
+                <img style={{width:"50%"}} src={imageData?.data?.url} alt="" />
             </div>
            </div>
             <form onSubmit={handleOnSubmit} className='pt-3 w-100 mx-auto'>
