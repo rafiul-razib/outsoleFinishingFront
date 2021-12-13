@@ -38,8 +38,8 @@ const AddRecipe = () => {
     
   
     return (
-        <div className="container pt-4">
-            <form onSubmit={handleOnSubmit}>
+        <div className="container pt-4 my-4">
+            <form onSubmit={handleOnSubmit} className='pt-3 w-75 mx-auto'>
 
                 <label htmlFor="last" className="form-label">Last Name</label>
                 <input id="last" className="p-2 form-control" type="text" onChange={e=>setLast(e.target.value)} />
