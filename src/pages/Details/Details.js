@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom/cjs/react-router-dom.min';
-import { useState } from 'react/cjs/react.development';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 
 const Details = () => {
@@ -10,7 +9,6 @@ const Details = () => {
 
     const url = `https://quiet-fjord-05435.herokuapp.com/recipe/${outsoleId.id}`
   
-    console.log(url)
     useEffect(()=>{
    
         fetch(url)

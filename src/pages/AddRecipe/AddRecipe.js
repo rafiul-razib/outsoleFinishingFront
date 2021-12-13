@@ -21,6 +21,8 @@ const AddRecipe = () => {
         formData.append("manpower", manpower);
         formData.append("customer", customer);
 
+       
+
         fetch("https://quiet-fjord-05435.herokuapp.com/add-recipe",{
             method: "POST",
             body: formData
