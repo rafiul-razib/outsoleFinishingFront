@@ -62,8 +62,8 @@ const Home = () => {
     },[])
     return (
         <div className='container py-4 mt-5'>
-            <h3>Total saved recipe : {recipe.length}</h3>
-            <div className='row'>
+            <h5>Total saved recipe : {recipe.length}</h5>
+            <div className='row mt-4'>
             {
                 recipe.map(rcp => <Outsole rcp={rcp} key={rcp._id}></Outsole>)
             }

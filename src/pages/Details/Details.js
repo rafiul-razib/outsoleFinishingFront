@@ -24,10 +24,16 @@ const Details = () => {
             <div className="card mx-auto pt-2" style={{width:"80%"}}>
             {/* <img src={`data: image/png; base64, ${outsole.imageBuffer}`} className="card-img-top" alt="..."/> */}
             <div className="card-body m-4">
-                <h5 className="card-title">{outsole.last} {outsole.art}</h5>
+                <h2 className="card-title">{outsole.last} {outsole.art}</h2>
                 <p className="card-text">{outsole.customer}</p>
-                <div className='information' dangerouslySetInnerHTML={{__html: outsole.finishing}}></div>
-                <div className='information' dangerouslySetInnerHTML={{__html: outsole.manpower}}></div>
+                <div className='information text-start'>
+                    <h4>Finishing Recipe</h4>
+                <div dangerouslySetInnerHTML={{__html: outsole.finishing}}></div>
+                </div>
+                <div className='information text start'>
+                    <h4>Manpower Distribution</h4>
+                <div  dangerouslySetInnerHTML={{__html: outsole.manpower}}></div>
+                </div>
                 <Link to='/'>
                 <button className='btn btn-danger text-white w-100'>Back to Home</button>
                 </Link>
