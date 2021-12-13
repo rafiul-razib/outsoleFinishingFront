@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AllRecipeRow = (props) => {
-    const{last, art, customer, _id} = props.recipe;
+    const{last, art, customer, _id, color} = props.recipe;
     const setUpdate = props.setUpdate
 
     const handleDelete = e =>{
@@ -34,6 +34,7 @@ const AllRecipeRow = (props) => {
                 <th scope="row">#</th>
                 <td>{last}</td>
                 <td>{art}</td>
+                <td>{color}</td>
                 <td>{customer}</td>
                 <td><button onClick={handleDelete} className='btn btn-danger text-white'>Delete</button></td>
         </tr>

@@ -20,6 +20,7 @@ const AllRecipe = () => {
                 <th scope="col">#</th>
                 <th scope="col">Last</th>
                 <th scope="col">Art</th>
+                <th scope="col">Color</th>
                 <th scope="col">Customer</th>
                 <th scope="col">Action</th>
                 </tr>
