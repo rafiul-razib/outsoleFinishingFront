@@ -17,6 +17,9 @@ const Navigation = () => {
                 <li className="nav-item">
                 <a className="nav-link" href="/addRecipe">Add Recipe</a>
                 </li>
+                <li className="nav-item">
+                <a className="nav-link" href="/all-recipe">All Recipe</a>
+                </li>
             </ul>
             <form className="d-flex">
                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>

@@ -8,6 +8,7 @@ import {
 import AddRecipe from './pages/AddRecipe/AddRecipe';
 import Navigation from './pages/AddRecipe/Shared/Navigation';
 import Details from './pages/Details/Details';
+import AllRecipe from './pages/AllRecipe/AllRecipe';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path="/recipe/:id">
             <Details></Details>
+          </Route>
+          <Route path="/all-recipe">
+            <AllRecipe></AllRecipe>
           </Route>
         </Switch>
       </Router>

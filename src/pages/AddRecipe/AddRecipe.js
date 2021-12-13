@@ -107,7 +107,7 @@ const AddRecipe = () => {
                 <button className='btn btn-success'>Upload Image</button>
             </form>
             <div className='pt-3 w-75 mx-auto'>
-                <img src={imageData?.data?.url} alt="" />
+                <img style={{width:"350px"}} src={imageData?.data?.url} alt="" />
             </div>
            </div>
             <form onSubmit={handleOnSubmit} className='pt-3 w-75 mx-auto'>
