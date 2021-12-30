@@ -13,7 +13,7 @@ const AllRecipe = () => {
         })
     },[update])
     return (
-        <div className='container mt-5 table-responsive'>
+        <div className='container-fluid mt-5 table-responsive'>
             <table class="table table-striped table-hover">
             <thead>
                 <tr>

@@ -10,6 +10,10 @@ import Navigation from './pages/AddRecipe/Shared/Navigation';
 import Details from './pages/Details/Details';
 import AllRecipe from './pages/AllRecipe/AllRecipe';
 import { useState } from 'react';
+import AuthProvider from './pages/AuthProvider/AuthProvider';
+import Login from './pages/login/Login';
+import Register from './pages/login/Register';
+import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 
 function App() {
   const[displayOutsoles, setDisplayOutsoles] = useState([])
@@ -17,6 +21,7 @@ function App() {
   const[recipe, setRecipe] = useState([])
   return (
     <div>
+      <AuthProvider>
       <Router>
         <Navigation
         displayOutsoles={displayOutsoles} 
@@ -36,17 +41,24 @@ function App() {
             setRecipe={setRecipe}
             ></Home>
           </Route>
-          <Route path="/addRecipe">
+          <PrivateRoute path="/addRecipe">
             <AddRecipe></AddRecipe>
-          </Route>
+          </PrivateRoute>
           <Route path="/recipe/:id">
             <Details></Details>
           </Route>
-          <Route path="/all-recipe">
+          <PrivateRoute path="/all-recipe">
             <AllRecipe></AllRecipe>
+          </PrivateRoute>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/register">
+            <Register></Register>
           </Route>
         </Switch>
       </Router>
+      </AuthProvider>
     </div>
   );
 }

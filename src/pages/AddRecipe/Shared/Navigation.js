@@ -1,7 +1,9 @@
 import React from 'react';
+import useAuth from '../../hooks/useAuth';
 
 
 const Navigation = (props) => {
+    const{user, logOut} = useAuth()
     const searchedOutsole = props.serchedOutsole;
     const setSearchedOutsole = props.setSerchedOutsole;
     const setDisplayOutsoles = props.setDisplayOutsoles;
@@ -12,6 +14,11 @@ const Navigation = (props) => {
         const searchedText = e.target.value;
         const matchedLast = recipe.filter(recipe => recipe.last.toLowerCase().includes(searchedText.toLowerCase()));
         setDisplayOutsoles(matchedLast)
+    }
+
+    const handleLogOut = e =>{
+        logOut()
+        e.preventDefault()
     }
 
     console.log(searchedOutsole)
@@ -33,6 +40,17 @@ const Navigation = (props) => {
                 <li className="nav-item">
                 <a className="nav-link" href="/all-recipe">All Recipe</a>
                 </li>
+                <li className="nav-item">
+                {
+                    user.email?
+                    <button className='btn btn-success mx-2' onClick={handleLogOut}>Log Out</button>
+                    :
+                    <a className="nav-link" href="/login">Login</a>
+                }
+                </li>
+                {
+                    user.email && <span className='navbar-text'>Signed in as {user.email}</span>
+                }
             </ul>
             <form className="d-flex">
                 <input className="form-control me-2" type="search" 

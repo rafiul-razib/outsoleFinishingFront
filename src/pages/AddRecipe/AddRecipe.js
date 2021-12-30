@@ -30,7 +30,7 @@ const AddRecipe = () => {
         formData.append("customer", customer);
         formData.append("color", color);
 
-       
+        console.log(formData);
 
         fetch("https://quiet-fjord-05435.herokuapp.com/add-recipe",{
             method: "POST",
